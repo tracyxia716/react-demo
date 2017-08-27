@@ -1,10 +1,24 @@
-import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import TodoList from '../components/TodoList'
 
-export default class TodoListContainer extends Component {
-    render() {
-        return (
-            <TodoList />
-        )
+
+const mapStateToProps = (state) => {
+    return {
+       todos: [{
+           id:0,
+           completed: false,
+           text:'sdfsf'
+       }]
     }
 }
+
+const mapDispatchToProps = {
+    
+}
+
+const TodoListContainer = connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(TodoList)
+
+export default TodoListContainer
